@@ -10,9 +10,8 @@ def update(customerfname, melicode):
         customer_record = cursor.fetchone()
         print(customer_record)
 
-        pg_update = """update public "customer" set "customerfname"=%s WHERE "melicode"=%s """
+        pg_update = """update public."customer" set "customerfname"=%s WHERE "melicode"=%s """
         cursor.execute(pg_update, (customerfname, melicode))
-
         count = cursor.rowcount
         print(count, "successfully updating")
 
